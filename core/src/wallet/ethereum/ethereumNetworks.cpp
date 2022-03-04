@@ -48,15 +48,25 @@ namespace ledger {
                     );
                     return ETHEREUM;
                 } else if (networkName == "ethereum_ropsten") {
-                    static const api::EthereumLikeNetworkParameters ETHEREUM_ROPSTEN(
-                            "eth_ropsten",
-                            "Ethereum signed message:\n",
-                            "3",
-                            {0x04, 0x35, 0x87, 0xCF},
-                            {},
-                            0
-                    );
-                    return ETHEREUM_ROPSTEN;
+                  static const api::EthereumLikeNetworkParameters ETHEREUM_ROPSTEN(
+                                                                                   "eth_ropsten",
+                                                                                   "Ethereum signed message:\n",
+                                                                                   "3",
+                                                                                   {0x04, 0x35, 0x87, 0xCF},
+                                                                                   {},
+                                                                                   0
+                                                                                   );
+                  return ETHEREUM_ROPSTEN;
+                } else if (networkName == "ethereum_goerli") {
+                  static const api::EthereumLikeNetworkParameters ETHEREUM_GOERLI(
+                                                                                   "eth_goerli",
+                                                                                   "Ethereum signed message:\n",
+                                                                                   "5",
+                                                                                   {0x04, 0x35, 0x87, 0xCF},
+                                                                                   {},
+                                                                                   0
+                                                                                   );
+                  return ETHEREUM_GOERLI;
                 } else if (networkName == "ethereum_classic") {
                     static const api::EthereumLikeNetworkParameters ETHEREUM_CLASSIC(
                             "etc",
@@ -76,6 +86,7 @@ namespace ledger {
             ({
                      getEthLikeNetworkParameters("ethereum"),
                      getEthLikeNetworkParameters("ethereum_ropsten"),
+                     getEthLikeNetworkParameters("ethereum_goerli"),
                      getEthLikeNetworkParameters("ethereum_classic"),
             });
         }
